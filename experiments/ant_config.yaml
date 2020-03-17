@@ -1,0 +1,9 @@
+project: ant_maze
+main:
+  log: false
+  descriptor: hiro_ant
+  save_model: true
+  render: false
+
+agent:
+ goal_type: Direction

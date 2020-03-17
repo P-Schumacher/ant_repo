@@ -1,0 +1,61 @@
+
+buffer:
+  c_step: ${main.c_step}
+  offpolicy: ${main.offpolicy}
+  max_size: 200000
+
+agent:
+  # Params for the Agent. In case of flat agent, the sub-agent params
+  # will be used.
+  spherical_coord: false
+  sub_mock: false
+  meta_mock: false
+  goal_type: Direction 
+  ri_re: false
+  zero_obs: 2
+  num_eval_episodes: 10
+  sub_rew_scale: 1
+  meta_rew_scale: 0.1
+  sub_noise: 1.0
+  meta_noise: 1.0
+  seed: ${main.seed}
+  c_step: ${main.c_step}
+
+  meta_model:
+    ac_hidden_layers: [300, 300]
+    cr_hidden_layers: [300, 300]
+    clip_cr: 10000.5
+    clip_ac: 10000.5
+    reg_coeff_ac: 0.0
+    reg_coeff_cr: 0.0
+    name: 'meta'
+    discount: 0.99
+    tau: 0.005
+    policy_noise: 0.2
+    noise_clip: 0.5
+    policy_freq: 2
+    ac_lr: 0.0001
+    cr_lr: 0.001
+    offpolicy: ${main.offpolicy}
+    c_step: ${main.c_step}
+    no_candidates: 10
+
+  sub_model:
+    ac_hidden_layers: [300, 300]
+    cr_hidden_layers: [300, 300]
+    clip_cr: 100000.0
+    clip_ac: 100000.0
+    reg_coeff_ac: 0.0
+    reg_coeff_cr: 0.0
+    name: 'sub'
+    discount: 0.99
+    tau: 0.005
+    policy_noise: 0.2
+    noise_clip: 0.5
+    policy_freq: 2
+    ac_lr: 0.0001
+    cr_lr: 0.001
+    offpolicy: ${main.offpolicy}
+    c_step: ${main.c_step}
+    no_candidates: 10
+

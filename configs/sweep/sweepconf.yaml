@@ -1,0 +1,53 @@
+program: sweeps_script.py
+method: random
+metric:
+  name: eval/success_rate
+  goal: maximize
+
+parameters:
+  meta_model_ac_lr:
+    min: 0.0001
+    max: 0.001
+    distribution: uniform
+
+  meta_model_cr_lr:
+    min: 0.0001
+    max: 0.001
+    distribution: uniform
+
+  meta_model_reg_coeff_ac:
+    min: 0.0
+    max: 0.0001
+    distribution: uniform
+
+  meta_model_reg_coeff_cr:
+    min: 0.0
+    max: 0.0001
+    distribution: uniform
+
+  meta_model_clip_ac:
+    min: 0.0
+    max: 5
+    distribution: uniform
+
+  meta_model_clip_cr:
+    min: 0.0
+    max: 5
+    distribution: uniform
+
+  action_regularizer:
+    min: 0.0
+    max: 0.001
+    distribution: uniform
+
+  start_timesteps:
+    min: 1000
+    max: 10000
+    distribution: int_uniform
+
+  meta_rew_scale:
+    min: 0.1
+    max: 10
+    distribution: uniform
+
+    

@@ -1,0 +1,89 @@
+batch_size:
+  128
+c_step:
+  10
+discount:
+  0.99
+ee_j_pos:
+  false
+ee_pos:
+  false
+env:
+  AntMaze
+eval_freq:
+  50000
+expl_noise:
+  0.1
+flat_agent:
+  false
+force:
+  false
+goal_type:
+  Direction
+load_model:
+  false
+log:
+  true
+max_timesteps:
+  5000000
+meta_actr_lr:
+  0.0001
+meta_ctr_lr:
+  0.01
+meta_mock:
+  false
+meta_noise:
+  1.0
+meta_rew_scale:
+  0.1
+mock:
+  false
+no_candidates:
+  10
+noise_clip:
+  0.5
+offpolicy:
+  true
+policy:
+  TD3
+policy_freq:
+  1
+policy_noise:
+  0.2
+random_target:
+  false
+render:
+  false
+ri_re:
+  false
+save_model:
+  false
+seed:
+  0
+sparse_rew:
+  false
+start_timesteps:
+  2500
+sub_actr_lr:
+  0.0001
+sub_ctr_lr:
+  0.0001
+sub_mock:
+  false
+sub_noise:
+  1.0
+sub_rew_scale:
+  1
+subgoal_ee_range:
+  5.0
+tau:
+  0.005
+time_limit:
+  500
+visit:
+  false
+vrep:
+  false
+zero_obs:
+  2
+

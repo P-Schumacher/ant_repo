@@ -1,0 +1,8 @@
+main:
+  log: false
+  descriptor: hiro_ant
+  load_model: true
+  render: true
+
+env_w_goal:
+  evalmode: true

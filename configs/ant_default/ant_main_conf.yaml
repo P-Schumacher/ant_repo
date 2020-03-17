@@ -1,0 +1,41 @@
+
+project: ant_maze
+entity: rlpractitioner
+
+main:
+  env: AntMaze
+  vrep: false
+  log: true
+  visit: false
+  render: false
+  save_model: false
+  load_model: false
+  start_timesteps: 2500
+  max_timesteps: 1500000
+  time_limit: 500 
+  offpolicy: true
+  flat_agent: false 
+  batch_size: 128
+  model: TD3
+  eval_freq: 20000
+  seed: 9
+  train_every: 500 
+  gradient_steps: 500 
+  c_step: 10
+
+  decay: false 
+  step_decayer:
+    total_steps: 700000
+    init_step: ${main.c_step}
+    min_step: 5
+
+maze_env:
+  env_name: AntMaze
+  show: ${main.render}
+
+env_w_goal:
+  env_name: ${maze_env.env_name}
+  time_limit: ${main.time_limit}
+  render: ${main.render}
+
+
